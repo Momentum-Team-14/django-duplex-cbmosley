@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %} 
+    <h1>{{ snippet }}</h1>
+    <aside class="actions">
+        <a class="btn btn-secondary" href="{% url 'snippets_edit' pk=snippet.pk %}">
+          {% include 'snippets/icons/bootstrap/pencil-fill.svg' %}
+        </a>
+    </aside>
+    <aside class="actions">
+        <a class="delete-button" href="{% url 'delete_snippet' pk=snippet.pk %}">
+            {% include 'snippets/icons/bootstrap/trash.svg' %}
+        </a>
+    </aside>
+{% endblock %} 
