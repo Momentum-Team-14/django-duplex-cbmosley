@@ -1,13 +1,15 @@
 {% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <h1>{{ snippet.user }}'s Snippet</h1>
+    <h2>Description: {{ snippet.description }}</h2>
+    <h3>Language: {{ snippet.language }}</h3>
+    <h3>{{ snippet.code }}</h3>
 
-{% block content %} 
-    <h1>{{ snippet }}</h1>
     <aside class="actions">
         <a class="btn btn-secondary" href="{% url 'snippets_edit' pk=snippet.pk %}">
             {% include 'snippets/icons/bootstrap/pencil-fill.svg' %}
         </a>
-    </aside>
-    <aside class="actions">
         <a class="delete-button" href="{% url 'delete_snippet' pk=snippet.pk %}">
             {% include 'snippets/icons/bootstrap/trash.svg' %}
         </a>

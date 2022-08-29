@@ -26,7 +26,7 @@ def create_snippet(request):
 
 
 def snippets_edit(request, pk):
-    snippet = get_object_or_404(snippet, pk=pk)
+    snippet = get_object_or_404(Snippet, pk=pk)
     if request.method == "POST":
         form = SnippetForm(request.POST, instance=snippet)
         if form.is_valid():

@@ -30,3 +30,6 @@ class Snippet(models.Model):
 class Language(models.Model):
     name = models.CharField(max_length=255)
     version = models.FloatField(blank=True, null=True)
+
+    def __str__(self):
+        return f'{self.name} {self.version}'

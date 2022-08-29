@@ -1,0 +1,23 @@
+.header{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    color: red;
+    background-color: black;
+    width: 500px;
+    border: 1px solid black;
+    padding: 50px;
+}
+
+.snippet-title{
+    margin: 0 auto;
+    color: rgb(0, 8, 255);
+    width: 50px;
+    border: 1px solid black;
+}
+
+.siderbar{
+    display: flex;
+    justify-content: center;
+    background-color: orange; 
+}

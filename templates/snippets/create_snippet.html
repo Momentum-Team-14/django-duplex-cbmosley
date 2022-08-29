@@ -1,15 +1,11 @@
 {% extends 'base.html' %}
 
 {% block content %} 
-    <h1>{{ snippet }}</h1>
-    <aside class="actions">
-        <a class="btn btn-secondary" href="{% url 'snippets_edit' pk=snippet.pk %}">
-          {% include 'snippets/icons/bootstrap/pencil-fill.svg' %}
-        </a>
-    </aside>
-    <aside class="actions">
-        <a class="delete-button" href="{% url 'delete_snippet' pk=snippet.pk %}">
-            {% include 'snippets/icons/bootstrap/trash.svg' %}
-        </a>
-    </aside>
-{% endblock %} 
+<h2>New Snippet</h2>
+<form method="POST"
+class="new-snippet">{% csrf_token %}
+    {{ form.as_p co}}
+    <button type="submit" class="save btn btn-secondary">Save</button>
+</form>
+
+{% endblock %}

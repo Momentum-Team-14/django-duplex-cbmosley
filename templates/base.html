@@ -9,7 +9,21 @@
     <title>Document</title>
 </head>
 <body>
+<header>
+    <div class="sidebar">
+        <div>
+            <a href="{% url 'list_snippets' %}">Snippets</a>
+        </div>
+        <div>Language</div>
+        <div>
+            <a href="{% url 'admin:index' %}">Admin</a>
+        </div>
+    </div>
+</header>
+
+<div class="main">
 {% block content %}
 {% endblock %}
+</div>
 </body>
 </html>
