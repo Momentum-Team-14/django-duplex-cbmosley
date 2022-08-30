@@ -1,17 +1,24 @@
 {% extends 'base.html' %}
-{% load static %}
+
 {% block content %}
-    <h1>{{ snippet.user }}'s Snippet</h1>
-    <h2>Description: {{ snippet.description }}</h2>
-    <h3>Language: {{ snippet.language }}</h3>
-    <h3>{{ snippet.code }}</h3>
+    <h1 class="user">{{ snippet.user }}'s Snippet</h1>
+    <h3>Description:</h3> 
+        <p>{{ snippet.description }}</p>
+    <h3>Language:</h3>
+        <p>{{ snippet.language }}
+    <h3>Code Example:</h3>
+        <p>{{ snippet.code }}</p>
 
     <aside class="actions">
-        <a class="btn btn-secondary" href="{% url 'snippets_edit' pk=snippet.pk %}">
-            {% include 'snippets/icons/bootstrap/pencil-fill.svg' %}
+        <div class="edit">
+            <a class="btn btn-secondary" href="{% url 'snippets_edit' pk=snippet.pk %}">
+                {% include 'snippets/icons/bootstrap/pencil-fill.svg' %}
         </a>
-        <a class="delete-button" href="{% url 'delete_snippet' pk=snippet.pk %}">
-            {% include 'snippets/icons/bootstrap/trash.svg' %}
-        </a>
+        </div>
+        <div class="delete">
+            <a class="delete-button" href="{% url 'delete_snippet' pk=snippet.pk %}">
+                {% include 'snippets/icons/bootstrap/trash.svg' %}
+            </a>
+        </div>
     </aside>
 {% endblock %} 

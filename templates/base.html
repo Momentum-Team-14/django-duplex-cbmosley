@@ -11,12 +11,26 @@
 <body>
 <header>
     <div class="sidebar">
-        <div>
+        <div class="links">
             <a href="{% url 'list_snippets' %}">Snippets</a>
         </div>
-        <div>Language</div>
-        <div>
+        <div class="links">
+            <a href="{% url 'create_snippet' %}">Add a Snippet</a>
+        </div>
+        <div class="links">
             <a href="{% url 'admin:index' %}">Admin</a>
+        </div>
+        <div class="links">
+            <a href="{% url 'registration_register' %}">Register New Account</a>
+        </div>
+        <div class="links">
+            <a href="{% url 'auth_login' %}">Login</a>
+        </div>
+        <div class="links">
+            <a href='/accounts/logout'>Logout</a>
+        </div>
+        <div>
+            <h4 class="user">Logged in as: {{ user }}</h4>
         </div>
     </div>
 </header>

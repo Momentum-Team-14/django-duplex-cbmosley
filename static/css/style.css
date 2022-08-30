@@ -4,20 +4,66 @@
     margin: 0 auto;
     color: red;
     background-color: black;
-    width: 500px;
+    background-repeat: no-repeat;
+    background-size: auto;
     border: 1px solid black;
     padding: 50px;
+
+}
+
+.user{
+    color:black;
+
+}
+
+header{
+    background-color: red;
+    color: black;
+    font-size: x-large;
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    flex-direction: row;
+}
+
+.sidebar{
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    
+    
+}
+
+.links{
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-direction: row;
+    padding: 20px;
+    background-color: whitesmoke;
+}
+
+body{
+    background-color: antiquewhite;
+}
+
+p{
+    font-size: large;
+    display: flex;
+    align-items: center;
+
 }
 
 .snippet-title{
-    margin: 0 auto;
+    margin: 5px auto;
     color: rgb(0, 8, 255);
-    width: 50px;
+    background-color: whitesmoke;
+    padding: 20px 30px;
+    padding-bottom: 15px;
+    width: 600px;
+    height: 30px;
     border: 1px solid black;
-}
-
-.siderbar{
     display: flex;
-    justify-content: center;
-    background-color: orange; 
+    align-items: flex-start;
+    justify-content: space-around;
 }

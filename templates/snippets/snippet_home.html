@@ -9,7 +9,7 @@
     
     <div class="container">
     <article class="snippet-box">
-        <h2> <a href="">Snippets</a></h2>
+        <h2> <a>Snippets:</a></h2>
         {% for snippet in snippets %}
         <div class="snippet-box">
             <a class="snippet-title" href="{% url 'snippet_detail' pk=snippet.pk %}"> {{ snippet }} </a>
