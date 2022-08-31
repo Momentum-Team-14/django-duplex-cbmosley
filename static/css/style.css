@@ -8,11 +8,13 @@
     background-size: auto;
     border: 1px solid black;
     padding: 50px;
+    
 
 }
 
 .user{
     color:black;
+    position: relative;
 
 }
 
@@ -24,6 +26,7 @@ header{
     justify-content: space-around;
     align-items: stretch;
     flex-direction: row;
+    
 }
 
 .sidebar{
@@ -39,7 +42,7 @@ header{
     justify-content: space-between;
     align-items: stretch;
     flex-direction: row;
-    padding: 20px;
+    padding: 25px;
     background-color: whitesmoke;
 }
 

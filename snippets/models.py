@@ -17,8 +17,10 @@ class Snippet(models.Model):
     language = models.ForeignKey(
         'Language', on_delete=models.CASCADE, related_name="snippets", blank=True, null=True)
     # related name should be the plural of the model that it's in. This a O2M rleationship. A snippet has one user. A user has many snippets.
-    user = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="snippets")
+    # user = models.ForeignKey(
+    # User, on_delete=models.CASCADE, related_name="snippets")
+    user = models.ManyToManyField(
+        'User', related_name='snippets')
     # if I wanted M2M
     # users = models.ManyToManyField('User', related_name='snippets')
     # if built snippet then take snippet descrition and language to be listed in description

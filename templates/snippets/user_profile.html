@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %} User Profile {% endblock title %}
+
+{% block content %} 
+<h1>{{request.user.username}}'s Page</h1>
+<p>{{request.user.username}}'s list of snippets:</p>
+{% for snippet in snippets %} 
+<div class="snippet-box">
+    <a class="snippet-title" href="{% url 'snippet_detail' pk=snippet.pk %}"> {{ snippet }} </a>
+</div>
+{% endfor %} 
+{% endblock content %}

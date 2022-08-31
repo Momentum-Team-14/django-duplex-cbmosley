@@ -43,3 +43,10 @@ def delete_snippet(request, pk):
     snippet.delete()
     return redirect('list_snippets')
     # return render(request, 'snippets/snippet_home.html', {"snippet": snippet})
+
+    # for user profile
+
+
+def user_profile(request):
+    snippets = Snippet.objects.filter(user=request.user)
+    return render(request, 'snippets/user_profile.html',{"snippets": snippets})
