@@ -20,7 +20,9 @@ class Snippet(models.Model):
     # user = models.ForeignKey(
     # User, on_delete=models.CASCADE, related_name="snippets")
     user = models.ManyToManyField(
-        'User', related_name='snippets')
+        'User', related_name='snippets', )
+    author = models.ForeignKey(
+        'Author', on_delete=models.CASCADE, related_name="snippets")
     # if I wanted M2M
     # users = models.ManyToManyField('User', related_name='snippets')
     # if built snippet then take snippet descrition and language to be listed in description

@@ -49,4 +49,4 @@ def delete_snippet(request, pk):
 
 def user_profile(request):
     snippets = Snippet.objects.filter(user=request.user)
-    return render(request, 'snippets/user_profile.html',{"snippets": snippets})
+    return render(request, 'snippets/user_profile.html', {"snippets": snippets})
