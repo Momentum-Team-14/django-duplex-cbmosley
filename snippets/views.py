@@ -15,17 +15,21 @@ def snippet_detail(request, pk):
     return render(request, "snippets/snippet_detail.html", {"snippet": snippet})
 
 
+@login_required
 def create_snippet(request):
     if request.method == "POST":
         form = SnippetForm(request.POST)
         if form.is_valid():
-            snippet = form.save()
+            snippet = form.save(commit=False)
+            snippet.author = request.user
+            snippet.save()
             return redirect('list_snippets')
     else:
         form = SnippetForm()
     return render(request, 'snippets/create_snippet.html', {'form': form})
 
 
+@login_required
 def snippets_edit(request, pk):
     snippet = get_object_or_404(Snippet, pk=pk)
     if request.method == "POST":
@@ -38,6 +42,7 @@ def snippets_edit(request, pk):
     return render(request, 'snippets/create_snippet.html', {'form': form})
 
 
+@login_required
 def delete_snippet(request, pk):
     snippet = get_object_or_404(snippet, pk=pk)
     snippet.delete()
@@ -47,6 +52,7 @@ def delete_snippet(request, pk):
     # for user profile
 
 
+@login_required
 def user_profile(request):
-    snippets = Snippet.objects.filter(user=request.user)
+    snippets = Snippet.objects.filter(users=request.user)
     return render(request, 'snippets/user_profile.html', {"snippets": snippets})

@@ -23,18 +23,21 @@
         <div class="links">
             <a href="{% url 'admin:index' %}">Admin</a>
         </div>
-        <div class="links">
-            <a href="{% url 'registration_register' %}">Register New Account</a>
-        </div>
-        <div class="links">
-            <a href="{% url 'auth_login' %}">Login</a>
-        </div>
-        <div class="links">
-            <a href='/accounts/logout'>Logout</a>
-        </div>
-        <div>
-            <h4 class="user">Logged in as: {{ user }}</h4>
-        </div>
+        {% if not user.is_authenticated %}
+            <div class="links">
+                <a href="{% url 'registration_register' %}">Register New Account</a>
+            </div>
+            <div class="links">
+                <a href="{% url 'auth_login' %}">Login</a>
+            </div>
+            {% else %}
+            <div class="links">
+                <a href='/accounts/logout'>Logout</a>
+            </div>
+            <div>
+                <h4 class="user">Logged in as: {{ user }}</h4>
+            </div>
+        {% endif %}
     </div>
 </header>
 
