@@ -20,5 +20,8 @@
                 {% include 'snippets/icons/bootstrap/trash.svg' %}
             </a>
         </div>
+        <div class="copy">
+            <a href="{% url 'copy_snippet' pk=snippet.pk %}">Duplicate</a>
+        </div>
     </aside>
 {% endblock %} 

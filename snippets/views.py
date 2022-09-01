@@ -44,15 +44,21 @@ def snippets_edit(request, pk):
 
 @login_required
 def delete_snippet(request, pk):
-    snippet = get_object_or_404(snippet, pk=pk)
+    snippet = get_object_or_404(Snippet, pk=pk)
     snippet.delete()
     return redirect('list_snippets')
     # return render(request, 'snippets/snippet_home.html', {"snippet": snippet})
 
-    # for user profile
 
-
+# for user profile
 @login_required
 def user_profile(request):
-    snippets = Snippet.objects.filter(users=request.user)
+    snippets = Snippet.objects.filter(users=request.user) | Snippet.objects.filter(author=request.user)
     return render(request, 'snippets/user_profile.html', {"snippets": snippets})
+
+def copy_snippet(request, pk):
+    snippet = get_object_or_404(Snippet, pk=pk)
+    snippet.pk=None
+    snippet.author = request.user
+    snippet.save()
+    return redirect('snippet_detail', pk=snippet.pk)
